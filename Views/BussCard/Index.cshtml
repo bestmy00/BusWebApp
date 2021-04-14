@@ -1,0 +1,66 @@
+﻿@model SchoolBussWebApp.Models.CardListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cards[0].Seq)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cards[0].Buss_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cards[0].Buss_Line)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cards[0].Issu_Numb)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cards[0].Card_Prob)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cards[0].Card_Stat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Cards) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seq)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Buss_Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Buss_Line)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Issu_Numb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card_Prob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card_Stat)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Card_Uuid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Card_Uuid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Card_Uuid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
