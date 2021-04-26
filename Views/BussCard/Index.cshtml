@@ -26,6 +26,10 @@
                 @Html.DisplayNameFor(model => model.Cards[0].Issu_Numb)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Cards[0].Card_Uuid)
+            </th>
+
+            <th>
                 @Html.DisplayNameFor(model => model.Cards[0].Card_Prob)
             </th>
             <th>
@@ -48,6 +52,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Issu_Numb)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card_Uuid)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Card_Prob)

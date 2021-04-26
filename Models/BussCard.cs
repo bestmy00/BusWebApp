@@ -7,7 +7,6 @@ namespace SchoolBussWebApp.Models
     public class BussCard
     {
         [DisplayName("관리번호")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Seq { get; set; }
         [DisplayName("버스라인코드")]
         [StringLength(6)]
